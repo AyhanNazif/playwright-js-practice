@@ -4,9 +4,9 @@ class HomePage {
 
     constructor(page) {
         this.page = page;
-        this.username = page.locator('#user-name');
-        this.password = page.locator('#password')
-        this.loginButton = page.locator('#login-button');
+        this.username = page.getByPlaceholder('Username');
+        this.password = page.getByPlaceholder('Password');
+        this.loginButton = page.getByRole('button', {type: 'submit'});
         this.title = page.locator('.login_logo');
         this.login_credentials = page.locator('#login_credentials');
     }
