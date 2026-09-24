@@ -25,7 +25,7 @@ test.describe("e2e tests", () => {
     test.afterAll(async () => {
         await browser.close();
     });
-    
+
     test.beforeEach(async () => {
         context = await browser.newContext();
         page = await context.newPage();
