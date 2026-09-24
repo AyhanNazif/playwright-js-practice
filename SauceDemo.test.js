@@ -17,12 +17,15 @@ let checkoutStepTwo;
 let checkoutCompletePage;
 
 test.describe("e2e tests", () => {
+
     test.beforeAll(async () => {
         browser = await chromium.launch();
     });
+
     test.afterAll(async () => {
         await browser.close();
     });
+    
     test.beforeEach(async () => {
         context = await browser.newContext();
         page = await context.newPage();
