@@ -1,10 +1,10 @@
 const{ test, chromium, expect } = require('@playwright/test');
-const{HomePage} = require('../JS_Practice/pages/HomePage');
-const{InventoryPage} = require('../JS_Practice/pages/InventoryPage');
-const{CartPage} = require('../JS_Practice/pages/CartPage');
-const{CheckoutStepOne} = require('../JS_Practice/pages/CheckoutStepOne');
-const{CheckoutStepTwo} = require('../JS_Practice/pages/CheckoutStepTwo');
-const { CheckoutCompletePage } = require('../JS_Practice/pages/CheckoutCompletePage');
+const{HomePage} = require('./pages/HomePage');
+const{InventoryPage} = require('./pages/InventoryPage');
+const{CartPage} = require('./pages/CartPage');
+const{CheckoutStepOne} = require('./pages/CheckoutStepOne');
+const{CheckoutStepTwo} = require('./pages/CheckoutStepTwo');
+const { CheckoutCompletePage } = require('./pages/CheckoutCompletePage');
 
 let browser;
 let context;
@@ -43,8 +43,8 @@ test.describe("e2e tests", () => {
         test("Checkout positive case", async () => {
            await homePage.Open();
            await homePage.CheckMainTitle("Swag Labs");
-           await homePage.AddUsername();
-           await homePage.AddPassword();
+           await homePage.AddUsername("standard_user");
+           await homePage.AddPassword("secret_sauce");
            await homePage.ClickLoginButton();
            await homePage.CheckLoginCredentialsAreNotVisible();
            await inventoryPage.CheckProductsTitleIsVisible("Products");
