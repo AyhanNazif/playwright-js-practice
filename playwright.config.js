@@ -1,7 +1,7 @@
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
-  testMatch: '**/tests.js',
+  testMatch: '*/tests.js',
 
   reporter: [
     ['list'],
