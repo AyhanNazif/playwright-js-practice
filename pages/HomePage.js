@@ -23,12 +23,12 @@ class HomePage {
         await expect(this.login_credentials).toBeHidden();
     }
 
-    async AddUsername() {
-       await this.username.fill("standard_user");
+    async AddUsername(user) {
+       await this.username.fill(user);
     }
 
-    async AddPassword() {
-        await this.password.fill("secret_sauce");
+    async AddPassword(pass) {
+        await this.password.fill(pass);
     }
 
     async ClickLoginButton(){

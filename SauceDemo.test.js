@@ -43,8 +43,8 @@ test.describe("e2e tests", () => {
         test("Checkout positive case", async () => {
            await homePage.Open();
            await homePage.CheckMainTitle("Swag Labs");
-           await homePage.AddUsername();
-           await homePage.AddPassword();
+           await homePage.AddUsername("standard_user");
+           await homePage.AddPassword("secret_sauce");
            await homePage.ClickLoginButton();
            await homePage.CheckLoginCredentialsAreNotVisible();
            await inventoryPage.CheckProductsTitleIsVisible("Products");
